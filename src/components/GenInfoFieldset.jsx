@@ -81,13 +81,13 @@ function GenInfoFieldset() {
 
       <div className="relative z-0 w-full mb-6 group">
         <textarea
-          name="floating_job_title"
-          id="floating_job_title"
+          name="floating_personal_statement"
+          id="floating_personal_staement"
           className={inputFieldClasses}
           placeholder=" "
           required
         />
-        <label htmlFor="floating_job_title" className={labelClasses}>
+        <label htmlFor="floating_personal_statement" className={labelClasses}>
           Personal Statement
         </label>
       </div>
