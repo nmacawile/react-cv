@@ -1,3 +1,5 @@
+import Tiptap from './Tiptap.jsx';
+
 function WorkHistoryFieldset() {
   const inputFieldClasses =
     "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-amber-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer";
@@ -66,14 +68,8 @@ function WorkHistoryFieldset() {
         </div>
 
         <h2 className="text-md text-gray-200 mb-2">Responsibilities</h2>
-        <div className="relative z-0 w-full mb-6 group">
-          <textarea
-            name="responsibilities"
-            id="responsibilities"
-            className={inputFieldClasses}
-            placeholder=" "
-            required
-          />
+        <div className="prose prose-invert max-w-none bg-gray-800 border-2 border-gray-700 w-full p-2 rounded-md">
+          <Tiptap/>
         </div>
       </div>
     </fieldset>
