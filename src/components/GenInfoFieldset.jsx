@@ -82,7 +82,7 @@ function GenInfoFieldset() {
       <div className="relative z-0 w-full mb-6 group">
         <textarea
           name="floating_personal_statement"
-          id="floating_personal_staement"
+          id="floating_personal_statement"
           className={inputFieldClasses}
           placeholder=" "
           required
