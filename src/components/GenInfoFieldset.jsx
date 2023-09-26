@@ -83,7 +83,7 @@ function GenInfoFieldset() {
         <textarea
           name="floating_personal_statement"
           id="floating_personal_statement"
-          className={inputFieldClasses + " min-h-[6ch]"}
+          className={inputFieldClasses + " min-h-[6ch] h-[12ch]"}
           placeholder=" "
           required
         />
