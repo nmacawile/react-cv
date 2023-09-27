@@ -6,31 +6,33 @@ function GenInfoFieldset() {
 
   return (
     <fieldset>
-      <legend className="text-xl mb-4 text-gray-200">General Information</legend>
+      <legend className="text-xl mb-4 text-gray-200">
+        General Information
+      </legend>
       <div className="grid md:grid-cols-2 md:gap-6">
         <div className="relative z-0 w-full mb-6 group">
           <input
             type="text"
-            name="floating_first_name"
-            id="floating_first_name"
+            name="firstName"
+            id="firstName"
             className={inputFieldClasses}
             placeholder=" "
             required
           />
-          <label htmlFor="floating_first_name" className={labelClasses}>
+          <label htmlFor="firstName" className={labelClasses}>
             First name
           </label>
         </div>
         <div className="relative z-0 w-full mb-6 group">
           <input
             type="text"
-            name="floating_last_name"
-            id="floating_last_name"
+            name="lastName"
+            id="lastName"
             className={inputFieldClasses}
             placeholder=" "
             required
           />
-          <label htmlFor="floating_last_name" className={labelClasses}>
+          <label htmlFor="lastName" className={labelClasses}>
             Last name
           </label>
         </div>
@@ -40,26 +42,28 @@ function GenInfoFieldset() {
           <input
             type="tel"
             pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-            name="floating_phone"
-            id="floating_phone"
+            name="phone"
+            id="phone"
             className={inputFieldClasses}
+            autoComplete="off"
             placeholder=" "
             required
           />
-          <label htmlFor="floating_phone" className={labelClasses}>
+          <label htmlFor="phone" className={labelClasses}>
             Phone number (123-456-7890)
           </label>
         </div>
         <div className="relative z-0 w-full mb-6 group">
           <input
             type="email"
-            name="floating_email"
-            id="floating_email"
-            className={inputFieldClasses}
+            name="email"
+            id="email"
+            className={inputFieldClasses}            
+            autoComplete="off"
             placeholder=" "
             required
           />
-          <label htmlFor="floating_email" className={labelClasses}>
+          <label htmlFor="email" className={labelClasses}>
             Email address
           </label>
         </div>
@@ -68,26 +72,26 @@ function GenInfoFieldset() {
       <div className="relative z-0 w-full mb-6 group">
         <input
           type="text"
-          name="floating_job_title"
-          id="floating_job_title"
+          name="jobTitle"
+          id="jobTitle"
           className={inputFieldClasses}
           placeholder=" "
           required
         />
-        <label htmlFor="floating_job_title" className={labelClasses}>
+        <label htmlFor="jobTitle" className={labelClasses}>
           Job Title
         </label>
       </div>
 
       <div className="relative z-0 w-full mb-6 group">
         <textarea
-          name="floating_personal_statement"
-          id="floating_personal_statement"
+          name="personalStatement"
+          id="personalStatement"
           className={inputFieldClasses + " min-h-[6ch] h-[12ch]"}
           placeholder=" "
           required
         />
-        <label htmlFor="floating_personal_statement" className={labelClasses}>
+        <label htmlFor="personalStatement" className={labelClasses}>
           Personal Statement
         </label>
       </div>

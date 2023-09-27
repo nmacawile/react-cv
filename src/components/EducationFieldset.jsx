@@ -12,13 +12,13 @@ function EducationFieldset() {
         <div className="relative z-0 w-full mb-6 group">
           <input
             type="text"
-            name="floating_school_name"
-            id="floating_school_name"
+            name="schoolName"
+            id="schoolName"
             className={inputFieldClasses}
             placeholder=" "
             required
           />
-          <label htmlFor="floating_school_name" className={labelClasses}>
+          <label htmlFor="schoolName" className={labelClasses}>
             School name
           </label>
         </div>
@@ -26,26 +26,26 @@ function EducationFieldset() {
           <div className="relative z-0 w-full mb-6 group">
             <input
               type="text"
-              name="floating_study"
-              id="floating_study"
+              name="study"
+              id="study"
               className={inputFieldClasses}
               placeholder=" "
               required
             />
-            <label htmlFor="floating_study" className={labelClasses}>
+            <label htmlFor="study" className={labelClasses}>
               Study
             </label>
           </div>
           <div className="relative z-0 w-full mb-6 group">
             <input
               type="month"
-              name="floating_start"
-              id="floating_start"
+              name="schoolStart"
+              id="schoolStart"
               className={inputFieldClasses}
               placeholder=" "
               required
             />
-            <label htmlFor="floating_start" className={labelClasses}>
+            <label htmlFor="schoolStart" className={labelClasses}>
               Start
             </label>
           </div>
@@ -53,13 +53,13 @@ function EducationFieldset() {
           <div className="relative z-0 w-full mb-6 group">
             <input
               type="month"
-              name="floating_end"
-              id="floating_end"
+              name="schoolEnd"
+              id="schoolEnd"
               className={inputFieldClasses}
               placeholder=" "
               required
             />
-            <label htmlFor="floating_end" className={labelClasses}>
+            <label htmlFor="schoolEnd" className={labelClasses}>
               End
             </label>
           </div>

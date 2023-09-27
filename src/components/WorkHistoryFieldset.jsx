@@ -1,4 +1,4 @@
-import Tiptap from './Tiptap.jsx';
+import Tiptap from "./Tiptap.jsx";
 
 function WorkHistoryFieldset() {
   const inputFieldClasses =
@@ -14,13 +14,13 @@ function WorkHistoryFieldset() {
         <div className="relative z-0 w-full mb-6 group">
           <input
             type="text"
-            name="floating_company_name"
-            id="floating_company_name"
+            name="companyName"
+            id="companyName"
             className={inputFieldClasses}
             placeholder=" "
             required
           />
-          <label htmlFor="floating_company_name" className={labelClasses}>
+          <label htmlFor="companyName" className={labelClasses}>
             Company name
           </label>
         </div>
@@ -28,26 +28,26 @@ function WorkHistoryFieldset() {
           <div className="relative z-0 w-full mb-6 group">
             <input
               type="text"
-              name="floating_position"
-              id="floating_position"
+              name="position"
+              id="position"
               className={inputFieldClasses}
               placeholder=" "
               required
             />
-            <label htmlFor="floating_position" className={labelClasses}>
+            <label htmlFor="position" className={labelClasses}>
               Position
             </label>
           </div>
           <div className="relative z-0 w-full mb-6 group">
             <input
               type="month"
-              name="floating_company_start"
-              id="floating_company_start"
+              name="workStart"
+              id="workStart"
               className={inputFieldClasses}
               placeholder=" "
               required
             />
-            <label htmlFor="floating_company_start" className={labelClasses}>
+            <label htmlFor="workStart" className={labelClasses}>
               Start
             </label>
           </div>
@@ -55,13 +55,13 @@ function WorkHistoryFieldset() {
           <div className="relative z-0 w-full mb-6 group">
             <input
               type="month"
-              name="floating_company_end"
-              id="floating_company_end"
+              name="workEnd"
+              id="workEnd"
               className={inputFieldClasses}
               placeholder=" "
               required
             />
-            <label htmlFor="floating_company_end" className={labelClasses}>
+            <label htmlFor="workEnd" className={labelClasses}>
               End
             </label>
           </div>
@@ -69,7 +69,7 @@ function WorkHistoryFieldset() {
 
         <h2 className="text-md text-gray-200 mb-2">Responsibilities</h2>
         <div className="prose prose-invert max-w-none bg-gray-800 border-2 border-gray-700 w-full p-2 rounded-md">
-          <Tiptap/>
+          <Tiptap />
         </div>
       </div>
     </fieldset>
