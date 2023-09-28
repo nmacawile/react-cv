@@ -14,7 +14,7 @@ function Form({ setActiveTab }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="grid grid-mar gap-6">
+    <form onSubmit={handleSubmit} className="grid gap-6">
       <GenInfoFieldset></GenInfoFieldset>
       <EducationFieldset></EducationFieldset>
       <WorkHistoryFieldset></WorkHistoryFieldset>
