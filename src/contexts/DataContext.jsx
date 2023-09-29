@@ -13,10 +13,11 @@ export function DataProvider({ children }) {
       phone: "123-456-7890",
       jobTitle: "Customer Service Representative",
     },
+    education: [],
   });
 
   const handleFieldsetChange = (fieldset, value) => {
-    setData({ ...data, [fieldset]: value });
+    setData((prevData) => ({ ...prevData, [fieldset]: value }));
   };
 
   return (
