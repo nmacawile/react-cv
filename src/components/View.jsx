@@ -12,8 +12,34 @@ function View({ setActiveTab }) {
         email,
         phone,
       },
+      education,
     },
   } = useContext(DataContext);
+
+  let incrementingKey = 0;
+
+  const generateKey = () => {
+    return incrementingKey++;
+  };
+
+  const parseYearMonth = (yearMonth) => {
+    const [year, month] = yearMonth.split("-");
+    const months = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+    return `${months[+month]} ${year}`;
+  };
 
   return (
     <>
@@ -74,15 +100,20 @@ function View({ setActiveTab }) {
             </li>
           </ul>
         </section>
-        <section>
+        <section className={education.length == 0 ? "hidden" : ""}>
           <h2>Education</h2>
           <ul>
-            <li>
-              <h3>Study</h3>
-              <p>
-                <em>Company Name</em>, March 2011 - present
-              </p>
-            </li>
+            {education.map((s) => {
+              return (
+                <li key={`viewSchool${generateKey()}`}>
+                  <h3>{s.study}</h3>
+                  <p>
+                    <em>{s.name}</em>,{" "}
+                    {`${parseYearMonth(s.start)} - ${parseYearMonth(s.start)}`}
+                  </p>
+                </li>
+              );
+            })}
           </ul>
         </section>
       </article>
