@@ -46,7 +46,7 @@ export default () => {
           }
         >
           <svg
-            className="w-6 h-6 text-gray-800 dark:text-white"
+            className="w-[16px] h-[16px] text-gray-800 dark:text-white"
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -70,7 +70,7 @@ export default () => {
           }
         >
           <svg
-            className="w-6 h-6 text-gray-800 dark:text-white"
+            className="w-[16px] h-[16px] text-gray-800 dark:text-white"
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -92,7 +92,7 @@ export default () => {
           className={buttonGroupMiddleClass + " " + buttonBg}
         >
           <svg
-            className="w-6 h-6 text-gray-800 dark:text-white"
+            className="w-[16px] h-[16px] text-gray-800 dark:text-white"
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -114,7 +114,7 @@ export default () => {
           className={buttonGroupMiddleClass + " " + buttonBg}
         >
           <svg
-            className="w-6 h-6 text-gray-800 dark:text-white"
+            className="w-[16px] h-[16px] text-gray-800 dark:text-white"
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -136,7 +136,7 @@ export default () => {
           className={buttonGroupEndClass + " " + buttonBg}
         >
           <svg
-            className="w-6 h-6 text-gray-800 dark:text-white"
+            className="w-[16px] h-[16px] text-gray-800 dark:text-white"
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
