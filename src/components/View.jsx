@@ -13,6 +13,7 @@ function View({ setActiveTab }) {
         phone,
       },
       education,
+      workHistory,
     },
   } = useContext(DataContext);
 
@@ -63,41 +64,47 @@ function View({ setActiveTab }) {
           <p>{personalStatement}</p>
         </section>
         <hr></hr>
-        <section>
+        <section className={workHistory.length == 0 ? "hidden" : ""}>
           <h2>Work History</h2>
           <ul>
-            <li>
-              <h3>Position</h3>
-              <p>
-                <em>Company Name</em>, March 2011 - present
-              </p>
-              <ul>
-                <li>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-                  sagittis et massa eu euismod. Vivamus viverra nisl libero, eu
-                  pharetra libero volutpat id. Vestibulum eu eleifend est.
-                  Vestibulum finibus, massa sit amet tincidunt facilisis, nulla
-                  erat dignissim felis, non ornare lectus nisl eu nulla. Donec
-                  in nisi id lorem varius dictum.
+            {workHistory.map((c) => {
+              return (
+                <li key={`viewCompany${generateKey()}`}>
+                  <h3>{c.position}</h3>
+                  <p>
+                    <em>{c.name}</em>,{" "}
+                    {`${parseYearMonth(c.start)} - ${parseYearMonth(c.end)}`}
+                  </p>
+                  <ul>
+                    <li>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Duis sagittis et massa eu euismod. Vivamus viverra nisl
+                      libero, eu pharetra libero volutpat id. Vestibulum eu
+                      eleifend est. Vestibulum finibus, massa sit amet tincidunt
+                      facilisis, nulla erat dignissim felis, non ornare lectus
+                      nisl eu nulla. Donec in nisi id lorem varius dictum.
+                    </li>
+                    <li>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Duis sagittis et massa eu euismod. Vivamus viverra nisl
+                      libero, eu pharetra libero volutpat id. Vestibulum eu
+                      eleifend est. Vestibulum finibus, massa sit amet tincidunt
+                      facilisis, nulla erat dignissim felis, non ornare lectus
+                      nisl eu nulla. Donec in nisi id lorem varius dictum.
+                    </li>
+                    <li>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Duis sagittis et massa eu euismod. Vivamus viverra nisl
+                      libero, eu pharetra libero volutpat id. Vestibulum eu
+                      eleifend est. Vestibulum finibus, massa sit amet tincidunt
+                      facilisis, nulla erat dignissim felis, non ornare lectus
+                      nisl eu nulla. Donec in nisi id lorem varius dictum.
+                    </li>
+                    ;
+                  </ul>
                 </li>
-                <li>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-                  sagittis et massa eu euismod. Vivamus viverra nisl libero, eu
-                  pharetra libero volutpat id. Vestibulum eu eleifend est.
-                  Vestibulum finibus, massa sit amet tincidunt facilisis, nulla
-                  erat dignissim felis, non ornare lectus nisl eu nulla. Donec
-                  in nisi id lorem varius dictum.
-                </li>
-                <li>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-                  sagittis et massa eu euismod. Vivamus viverra nisl libero, eu
-                  pharetra libero volutpat id. Vestibulum eu eleifend est.
-                  Vestibulum finibus, massa sit amet tincidunt facilisis, nulla
-                  erat dignissim felis, non ornare lectus nisl eu nulla. Donec
-                  in nisi id lorem varius dictum.
-                </li>
-              </ul>
-            </li>
+              );
+            })}
           </ul>
         </section>
         <section className={education.length == 0 ? "hidden" : ""}>

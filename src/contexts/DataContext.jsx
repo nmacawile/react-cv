@@ -14,6 +14,7 @@ export function DataProvider({ children }) {
       jobTitle: "Customer Service Representative",
     },
     education: [],
+    workHistory: [],
   });
 
   const handleFieldsetChange = (fieldset, value) => {
