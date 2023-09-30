@@ -124,7 +124,7 @@ function EducationFieldset() {
             <button
               type="button"
               onClick={() => removeEntry(index)}
-              aria-label="Toggle Numbered List"
+              aria-label="Remove Entry"
               className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:border-zinc-800 dark:text-white dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-500 dark:focus:text-white border rounded-md float-right"
             >
               <svg
