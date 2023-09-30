@@ -100,7 +100,6 @@ function View({ setActiveTab }) {
                       facilisis, nulla erat dignissim felis, non ornare lectus
                       nisl eu nulla. Donec in nisi id lorem varius dictum.
                     </li>
-                    ;
                   </ul>
                 </li>
               );
