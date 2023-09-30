@@ -106,6 +106,7 @@ function View({ setActiveTab }) {
             })}
           </ul>
         </section>
+        <hr className={workHistory.length == 0 ? "hidden" : ""}></hr>
         <section className={education.length == 0 ? "hidden" : ""}>
           <h2>Education</h2>
           <ul>
@@ -122,6 +123,7 @@ function View({ setActiveTab }) {
             })}
           </ul>
         </section>
+        <hr className={education.length == 0 ? "hidden" : ""}></hr>
       </article>
       <button
         type="button"
