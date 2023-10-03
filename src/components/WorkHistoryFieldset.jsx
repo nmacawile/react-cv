@@ -1,5 +1,5 @@
 import Tiptap from "./Tiptap.jsx";
-import { useState, useContext, useEffect } from "react";
+import { useContext } from "react";
 import { DataContext } from "../contexts/DataContext.jsx";
 
 function WorkHistoryFieldset() {
@@ -7,33 +7,29 @@ function WorkHistoryFieldset() {
     data: { workHistory },
     handleFieldsetChange,
   } = useContext(DataContext);
-  const [data, setData] = useState(workHistory);
-
-  useEffect(() => {
-    handleFieldsetChange("workHistory", [...data]);
-  }, [data]);
 
   const addEntry = () => {
-    setData((prevData) => [
-      ...prevData,
+    handleFieldsetChange("workHistory", [
+      ...workHistory,
       { name: "", position: "", start: "", end: "", responsibilities: "" },
     ]);
   };
 
   const removeEntry = (index) => {
-    setData((prevData) => {
-      return [...prevData.slice(0, index), ...prevData.slice(index + 1)];
-    });
+    handleFieldsetChange("workHistory", [
+      ...workHistory.slice(0, index),
+      ...workHistory.slice(index + 1),
+    ]);
   };
 
   const handleItemChange = ({ target: { value } }, index, property) => {
-    setData((prevData) => {
-      return [
-        ...prevData.slice(0, index),
-        { ...prevData[index], [property]: value },
-        ...prevData.slice(index + 1),
-      ];
-    });
+    const editedItem = { ...workHistory[index], [property]: value };
+    const newWorkHistory = [
+      ...workHistory.slice(0, index),
+      editedItem,
+      ...workHistory.slice(index + 1),
+    ];
+    handleFieldsetChange("workHistory", [...newWorkHistory]);
   };
 
   let incrementingKey = 0;
@@ -49,7 +45,7 @@ function WorkHistoryFieldset() {
     <fieldset className="grid gap-4">
       <legend className="text-xl mb-4 text-gray-200">Work History</legend>
 
-      {data.map((c, index) => {
+      {workHistory.map((c, index) => {
         const key = generateKey();
 
         return (
@@ -119,7 +115,6 @@ function WorkHistoryFieldset() {
                   End
                 </label>
               </div>
-              
             </div>
 
             <div className="mb-6">
