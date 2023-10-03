@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react";
+import { useContext } from "react";
 import { DataContext } from "../contexts/DataContext.jsx";
 
 function GenInfoFieldset() {
@@ -7,10 +7,6 @@ function GenInfoFieldset() {
     data: { generalInfo },
   } = useContext(DataContext);
 
-  const [data, setData] = useState(generalInfo);
-
-  useEffect(() => handleFieldsetChange("generalInfo", data), [data]);
-
   const inputFieldClasses =
     "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-amber-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer";
   const labelClasses =
@@ -18,7 +14,8 @@ function GenInfoFieldset() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setData((prevData) => ({ ...prevData, [name]: value }));
+    const newGeneralInfo = { ...generalInfo, [name]: value };
+    handleFieldsetChange("generalInfo", newGeneralInfo);
   };
 
   return (
@@ -32,7 +29,7 @@ function GenInfoFieldset() {
             type="text"
             name="firstName"
             id="firstName"
-            value={data.firstName}
+            value={generalInfo.firstName}
             onChange={handleChange}
             className={inputFieldClasses}
             placeholder=" "
@@ -47,7 +44,7 @@ function GenInfoFieldset() {
             type="text"
             name="lastName"
             id="lastName"
-            value={data.lastName}
+            value={generalInfo.lastName}
             onChange={handleChange}
             className={inputFieldClasses}
             placeholder=" "
@@ -65,7 +62,7 @@ function GenInfoFieldset() {
             pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
             name="phone"
             id="phone"
-            value={data.phone}
+            value={generalInfo.phone}
             onChange={handleChange}
             className={inputFieldClasses}
             autoComplete="off"
@@ -81,7 +78,7 @@ function GenInfoFieldset() {
             type="email"
             name="email"
             id="email"
-            value={data.email}
+            value={generalInfo.email}
             onChange={handleChange}
             className={inputFieldClasses}
             autoComplete="off"
@@ -99,7 +96,7 @@ function GenInfoFieldset() {
           type="text"
           name="jobTitle"
           id="jobTitle"
-          value={data.jobTitle}
+          value={generalInfo.jobTitle}
           onChange={handleChange}
           className={inputFieldClasses}
           placeholder=" "
@@ -114,7 +111,7 @@ function GenInfoFieldset() {
         <textarea
           name="personalStatement"
           id="personalStatement"
-          value={data.personalStatement}
+          value={generalInfo.personalStatement}
           onChange={handleChange}
           className={inputFieldClasses + " min-h-[6ch] h-[12ch]"}
           placeholder=" "
