@@ -1,5 +1,5 @@
 import { DataContext } from "../contexts/DataContext.jsx";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 
 function EducationFieldset() {
   const inputFieldClasses =
@@ -18,39 +18,34 @@ function EducationFieldset() {
     data: { education },
   } = useContext(DataContext);
 
-  const [data, setData] = useState(education);
-
-  useEffect(() => handleFieldsetChange("education", [...data]), [data]);
-
   const handleItemChange = ({ target: { value } }, index, property) => {
-    setData((prevData) => {
-      const editedItem = { ...prevData[index], [property]: value };
-      return [
-        ...prevData.slice(0, index),
-        editedItem,
-        ...prevData.slice(index + 1),
-      ];
-    });
+    const editedItem = { ...education[index], [property]: value };
+    const newEducation = [
+      ...education.slice(0, index),
+      editedItem,
+      ...education.slice(index + 1),
+    ];
+    handleFieldsetChange("education", [...newEducation]);
   };
 
   const addEntry = () => {
-    setData((prevData) => [
-      ...prevData,
+    handleFieldsetChange("education", [
+      ...education,
       { name: "", study: "", start: "", end: "" },
     ]);
   };
 
   const removeEntry = (index) => {
-    setData((prevData) => [
-      ...prevData.slice(0, index),
-      ...prevData.slice(index + 1),
+    handleFieldsetChange("education", [
+      ...education.slice(0, index),
+      ...education.slice(index + 1),
     ]);
   };
 
   return (
     <fieldset className="grid gap-4">
       <legend className="text-xl mb-4 text-gray-200">Education</legend>
-      {data.map((s, index) => {
+      {education.map((s, index) => {
         const key = generateKey();
 
         return (
