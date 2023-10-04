@@ -32,10 +32,6 @@ function WorkHistoryFieldset() {
     handleFieldsetChange("workHistory", [...newWorkHistory]);
   };
 
-  let incrementingKey = 0;
-
-  const generateKey = () => `company${incrementingKey++}`;
-
   const inputFieldClasses =
     "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-amber-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer";
   const labelClasses =
@@ -46,7 +42,7 @@ function WorkHistoryFieldset() {
       <legend className="text-xl mb-4 text-gray-200">Work History</legend>
 
       {workHistory.map((c, index) => {
-        const key = generateKey();
+        const key = `company${index}`;
 
         return (
           <div

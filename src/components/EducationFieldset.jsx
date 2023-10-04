@@ -7,12 +7,6 @@ function EducationFieldset() {
   const labelClasses =
     "peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-amber-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6";
 
-  let incrementingKey = 0;
-
-  const generateKey = () => {
-    return `school${incrementingKey++}`;
-  };
-
   const {
     handleFieldsetChange,
     data: { education },
@@ -46,7 +40,7 @@ function EducationFieldset() {
     <fieldset className="grid gap-4">
       <legend className="text-xl mb-4 text-gray-200">Education</legend>
       {education.map((s, index) => {
-        const key = generateKey();
+        const key = `school${index}`
 
         return (
           <div
