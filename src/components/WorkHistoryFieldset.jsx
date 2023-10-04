@@ -6,7 +6,6 @@ import {
   labelClasses,
 } from "../shared/formFieldClasses.jsx";
 
-
 function WorkHistoryFieldset() {
   const {
     data: { workHistory },
@@ -28,6 +27,14 @@ function WorkHistoryFieldset() {
   };
 
   const handleItemChange = ({ target: { value } }, index, property) => {
+    handleUpdate(value, index, property);
+  };
+
+  const handleEditorChange = (value, index) => {
+    handleUpdate(value, index, "responsibilities");
+  };
+
+  const handleUpdate = (value, index, property) => {
     const editedItem = { ...workHistory[index], [property]: value };
     const newWorkHistory = [
       ...workHistory.slice(0, index),
@@ -116,7 +123,9 @@ function WorkHistoryFieldset() {
             <div className="mb-6">
               <h2 className="text-md text-gray-200 mb-2">Responsibilities</h2>
               <div className="prose prose-invert max-w-none bg-gray-800 border-2 border-gray-700 w-full p-2 rounded-md">
-                <Tiptap />
+                <Tiptap
+                  handleUpdate={(value) => handleEditorChange(value, index)}
+                />
               </div>
             </div>
 

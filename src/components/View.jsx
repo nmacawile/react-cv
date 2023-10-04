@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { DataContext } from "../contexts/DataContext.jsx";
+import HtmlViewer from "./HtmlViewer.jsx";
 
 function View({ setActiveTab }) {
   const {
@@ -75,32 +76,10 @@ function View({ setActiveTab }) {
                     <em>{c.name}</em>,{" "}
                     {`${parseYearMonth(c.start)} - ${parseYearMonth(c.end)}`}
                   </p>
-                  <ul>
-                    <li>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Duis sagittis et massa eu euismod. Vivamus viverra nisl
-                      libero, eu pharetra libero volutpat id. Vestibulum eu
-                      eleifend est. Vestibulum finibus, massa sit amet tincidunt
-                      facilisis, nulla erat dignissim felis, non ornare lectus
-                      nisl eu nulla. Donec in nisi id lorem varius dictum.
-                    </li>
-                    <li>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Duis sagittis et massa eu euismod. Vivamus viverra nisl
-                      libero, eu pharetra libero volutpat id. Vestibulum eu
-                      eleifend est. Vestibulum finibus, massa sit amet tincidunt
-                      facilisis, nulla erat dignissim felis, non ornare lectus
-                      nisl eu nulla. Donec in nisi id lorem varius dictum.
-                    </li>
-                    <li>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Duis sagittis et massa eu euismod. Vivamus viverra nisl
-                      libero, eu pharetra libero volutpat id. Vestibulum eu
-                      eleifend est. Vestibulum finibus, massa sit amet tincidunt
-                      facilisis, nulla erat dignissim felis, non ornare lectus
-                      nisl eu nulla. Donec in nisi id lorem varius dictum.
-                    </li>
-                  </ul>
+
+                  <div className="prose prose-invert">
+                    <HtmlViewer content={c.responsibilities} />
+                  </div>
                 </li>
               );
             })}

@@ -9,7 +9,7 @@ import { EditorContent, useEditor } from "@tiptap/react";
 import React from "react";
 import "../styles/Tiptap.css";
 
-export default () => {
+export default ({ handleUpdate }) => {
   const editor = useEditor({
     extensions: [
       Document,
@@ -20,6 +20,9 @@ export default () => {
       ListItem,
       Placeholder.configure({ placeholder: "Write here." }),
     ],
+    onUpdate: ({ editor }) => {
+      handleUpdate(editor.getHTML());
+    },
   });
 
   if (!editor) {
