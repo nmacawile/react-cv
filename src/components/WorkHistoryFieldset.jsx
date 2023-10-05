@@ -59,34 +59,35 @@ function WorkHistoryFieldset() {
             <div className="relative z-0 w-full mb-6 group">
               <input
                 type="text"
-                name={`${key}Name`}
-                id={`${key}Name`}
-                value={c.name}
-                onChange={(e) => handleItemChange(e, index, "name")}
+                name={`${key}Position`}
+                id={`${key}Position`}
+                value={c.position}
+                onChange={(e) => handleItemChange(e, index, "position")}
                 className={inputFieldClasses}
                 placeholder=" "
                 required
               />
-              <label htmlFor={`${key}Name`} className={labelClasses}>
-                Company name
+              <label htmlFor={`${key}Position`} className={labelClasses}>
+                Position
               </label>
             </div>
             <div className="grid md:grid-cols-3 md:gap-6">
               <div className="relative z-0 w-full mb-6 group">
                 <input
                   type="text"
-                  name={`${key}Position`}
-                  id={`${key}Position`}
-                  value={c.position}
-                  onChange={(e) => handleItemChange(e, index, "position")}
+                  name={`${key}Name`}
+                  id={`${key}Name`}
+                  value={c.name}
+                  onChange={(e) => handleItemChange(e, index, "name")}
                   className={inputFieldClasses}
                   placeholder=" "
                   required
                 />
-                <label htmlFor={`${key}Position`} className={labelClasses}>
-                  Position
+                <label htmlFor={`${key}Name`} className={labelClasses}>
+                  Company name
                 </label>
               </div>
+
               <div className="relative z-0 w-full mb-6 group">
                 <input
                   type="month"

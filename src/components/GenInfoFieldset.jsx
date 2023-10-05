@@ -5,7 +5,6 @@ import {
   labelClasses,
 } from "../shared/formFieldClasses.jsx";
 
-
 function GenInfoFieldset() {
   const {
     handleFieldsetChange,
@@ -58,6 +57,22 @@ function GenInfoFieldset() {
       <div className="grid md:grid-cols-2 md:gap-6">
         <div className="relative z-0 w-full mb-6 group">
           <input
+            type="email"
+            name="email"
+            id="email"
+            value={generalInfo.email}
+            onChange={handleChange}
+            className={inputFieldClasses}
+            autoComplete="off"
+            placeholder=" "
+            required
+          />
+          <label htmlFor="email" className={labelClasses}>
+            Email address
+          </label>
+        </div>
+        <div className="relative z-0 w-full mb-6 group">
+          <input
             type="tel"
             pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
             name="phone"
@@ -71,22 +86,6 @@ function GenInfoFieldset() {
           />
           <label htmlFor="phone" className={labelClasses}>
             Phone number (123-456-7890)
-          </label>
-        </div>
-        <div className="relative z-0 w-full mb-6 group">
-          <input
-            type="email"
-            name="email"
-            id="email"
-            value={generalInfo.email}
-            onChange={handleChange}
-            className={inputFieldClasses}
-            autoComplete="off"
-            placeholder=" "
-            required
-          />
-          <label htmlFor="email" className={labelClasses}>
-            Email address
           </label>
         </div>
       </div>

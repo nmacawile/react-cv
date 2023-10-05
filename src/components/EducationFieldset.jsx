@@ -49,34 +49,35 @@ function EducationFieldset() {
             <div className="relative z-0 w-full mb-6 group">
               <input
                 type="text"
-                value={s.name}
-                onChange={(e) => handleItemChange(e, index, "name")}
-                name={`${key}Name`}
-                id={`${key}Name`}
+                value={s.study}
+                onChange={(e) => handleItemChange(e, index, "study")}
+                name={`${key}Study`}
+                id={`${key}Study`}
                 className={inputFieldClasses}
                 placeholder=" "
                 required
               />
-              <label htmlFor={`${key}Name`} className={labelClasses}>
-                School name
+              <label htmlFor={`${key}Study`} className={labelClasses}>
+                Study
               </label>
             </div>
             <div className="grid md:grid-cols-3 md:gap-6">
               <div className="relative z-0 w-full mb-6 group">
                 <input
                   type="text"
-                  value={s.study}
-                  onChange={(e) => handleItemChange(e, index, "study")}
-                  name={`${key}Study`}
-                  id={`${key}Study`}
+                  value={s.name}
+                  onChange={(e) => handleItemChange(e, index, "name")}
+                  name={`${key}Name`}
+                  id={`${key}Name`}
                   className={inputFieldClasses}
                   placeholder=" "
                   required
                 />
-                <label htmlFor={`${key}Study`} className={labelClasses}>
-                  Study
+                <label htmlFor={`${key}Name`} className={labelClasses}>
+                  School name
                 </label>
               </div>
+
               <div className="relative z-0 w-full mb-6 group">
                 <input
                   type="month"
