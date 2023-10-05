@@ -9,8 +9,9 @@ import { EditorContent, useEditor } from "@tiptap/react";
 import React from "react";
 import "../styles/Tiptap.css";
 
-export default ({ handleUpdate }) => {
+export default ({ handleUpdate, content }) => {
   const editor = useEditor({
+    content,
     extensions: [
       Document,
       Paragraph,

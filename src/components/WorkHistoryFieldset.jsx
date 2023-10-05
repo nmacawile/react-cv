@@ -124,6 +124,7 @@ function WorkHistoryFieldset() {
               <h2 className="text-md text-gray-200 mb-2">Responsibilities</h2>
               <div className="prose prose-invert max-w-none bg-gray-800 border-2 border-gray-700 w-full p-2 rounded-md">
                 <Tiptap
+                  content={c.responsibilities}
                   handleUpdate={(value) => handleEditorChange(value, index)}
                 />
               </div>
