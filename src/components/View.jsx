@@ -25,6 +25,7 @@ function View({ setActiveTab }) {
   };
 
   const parseYearMonth = (yearMonth) => {
+    if (!yearMonth) return;
     const [year, month] = yearMonth.split("-");
     const months = [
       "January",
@@ -74,7 +75,7 @@ function View({ setActiveTab }) {
                   <h3>{c.position}</h3>
                   <p>
                     <em>{c.name}</em>,{" "}
-                    {`${parseYearMonth(c.start)} - ${parseYearMonth(c.end)}`}
+                    {`${parseYearMonth(c.start)} - ${parseYearMonth(c.end) || 'present'}`}
                   </p>
 
                   <div className="prose prose-invert">

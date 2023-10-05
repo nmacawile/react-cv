@@ -113,7 +113,6 @@ function WorkHistoryFieldset() {
                   onChange={(e) => handleItemChange(e, index, "end")}
                   className={inputFieldClasses}
                   placeholder=" "
-                  required
                 />
                 <label htmlFor={`${key}End`} className={labelClasses}>
                   End
