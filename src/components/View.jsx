@@ -18,12 +18,6 @@ function View({ setActiveTab }) {
     },
   } = useContext(DataContext);
 
-  let incrementingKey = 0;
-
-  const generateKey = () => {
-    return incrementingKey++;
-  };
-
   const parseYearMonth = (yearMonth) => {
     if (!yearMonth) return;
     const [year, month] = yearMonth.split("-");
@@ -69,9 +63,9 @@ function View({ setActiveTab }) {
         <section className={workHistory.length == 0 ? "hidden" : ""}>
           <h2>Work History</h2>
           <ul>
-            {workHistory.map((c) => {
+            {workHistory.map((c, i) => {
               return (
-                <li key={`viewCompany${generateKey()}`}>
+                <li key={`viewCompany${i}`}>
                   <h3>{c.position}</h3>
                   <p>
                     <em>{c.name}</em>,{" "}
@@ -90,9 +84,9 @@ function View({ setActiveTab }) {
         <section className={education.length == 0 ? "hidden" : ""}>
           <h2>Education</h2>
           <ul>
-            {education.map((s) => {
+            {education.map((s, i) => {
               return (
-                <li key={`viewSchool${generateKey()}`}>
+                <li key={`viewSchool${i}`}>
                   <h3>{s.study}</h3>
                   <p>
                     <em>{s.name}</em>,{" "}
