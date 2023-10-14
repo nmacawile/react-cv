@@ -35,7 +35,7 @@ function View({ setActiveTab }) {
       "November",
       "December",
     ];
-    return `${months[+month]} ${year}`;
+    return `${months[+month - 1]} ${year}`;
   };
 
   return (
@@ -90,7 +90,7 @@ function View({ setActiveTab }) {
                   <h3>{s.study}</h3>
                   <p>
                     <em>{s.name}</em>,{" "}
-                    {`${parseYearMonth(s.start)} - ${parseYearMonth(s.start)}`}
+                    {`${parseYearMonth(s.start)} - ${parseYearMonth(s.end)}`}
                   </p>
                 </li>
               );
