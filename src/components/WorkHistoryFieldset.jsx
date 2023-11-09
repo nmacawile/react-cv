@@ -5,6 +5,8 @@ import {
   inputFieldClasses,
   labelClasses,
 } from "../shared/formFieldClasses.jsx";
+import DeleteButton from "./DeleteButton.jsx";
+import AddEntryButton from "./AddEntryButton";
 
 function WorkHistoryFieldset() {
   const {
@@ -46,7 +48,7 @@ function WorkHistoryFieldset() {
 
   return (
     <fieldset className="grid gap-4">
-      <legend className="text-xl mb-4 text-gray-200">Work History</legend>
+      <legend className="text-xl mb-4 dark:text-gray-200">Work History</legend>
 
       {workHistory.map((c, index) => {
         const key = `company${index}`;
@@ -54,7 +56,7 @@ function WorkHistoryFieldset() {
         return (
           <div
             key={key}
-            className="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-zinc-900 dark:border-zinc-800 p-6"
+            className="w-full bg-stone-100 border border-gray-300 rounded-lg shadow dark:bg-zinc-900 dark:border-zinc-800 p-6"
           >
             <div className="relative z-0 w-full mb-6 group">
               <input
@@ -121,8 +123,10 @@ function WorkHistoryFieldset() {
             </div>
 
             <div className="mb-6">
-              <h2 className="text-md text-gray-200 mb-2">Responsibilities</h2>
-              <div className="prose prose-invert max-w-none bg-gray-800 border-2 border-gray-700 w-full p-2 rounded-md">
+              <h2 className="text-md dark:text-gray-200 mb-2">
+                Responsibilities
+              </h2>
+              <div className="prose dark:prose-invert max-w-none dark:bg-gray-800 border-2 dark:border-gray-700 w-full p-2 rounded-md">
                 <Tiptap
                   content={c.responsibilities}
                   handleUpdate={(value) => handleEditorChange(value, index)}
@@ -130,33 +134,12 @@ function WorkHistoryFieldset() {
               </div>
             </div>
 
-            <button
-              type="button"
-              onClick={() => removeEntry(index)}
-              aria-label="Delete Entry"
-              className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:border-zinc-800 dark:text-white dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-500 dark:focus:text-white border rounded-md float-right"
-            >
-              <svg
-                className="w-[16px] h-[16px] text-gray-800 dark:text-white"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 18 20"
-              >
-                <path d="M17 4h-4V2a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v2H1a1 1 0 0 0 0 2h1v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6h1a1 1 0 1 0 0-2ZM7 2h4v2H7V2Zm1 14a1 1 0 1 1-2 0V8a1 1 0 0 1 2 0v8Zm4 0a1 1 0 0 1-2 0V8a1 1 0 0 1 2 0v8Z" />
-              </svg>
-            </button>
+            <DeleteButton onClick={() => removeEntry(index)} />
           </div>
         );
       })}
 
-      <button
-        type="button"
-        onClick={() => addEntry()}
-        className="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 w-full"
-      >
-        Add entry
-      </button>
+      <AddEntryButton onClick={addEntry} />
     </fieldset>
   );
 }

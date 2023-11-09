@@ -30,9 +30,9 @@ export default ({ handleUpdate, content }) => {
     return null;
   }
 
-  const buttonBg = "dark:bg-zinc-900";
+  const buttonBg = "bg-zinc-200 dark:bg-zinc-900";
   const buttonGroupMiddleClass =
-    "inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:border-zinc-800 dark:text-white dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-500 dark:focus:text-white border-t border-b";
+    "inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 border-gray-200 hover:bg-red-500 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-red-700 dark:border-zinc-800 dark:text-white dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-500 focus:outline-none dark:focus:text-white border-t border-b";
   const buttonGroupStartClass =
     buttonGroupMiddleClass + " border-l rounded-l-lg";
   const buttonGroupEndClass = buttonGroupMiddleClass + " border-r rounded-r-md";
@@ -46,7 +46,7 @@ export default ({ handleUpdate, content }) => {
           aria-label="Toggle Bullet List"
           className={
             buttonGroupStartClass +
-            (editor.isActive("bulletList") ? " bg-gray-600" : ` ${buttonBg}`)
+            (editor.isActive("bulletList") ? " bg-gray-400 dark:bg-gray-600" : ` ${buttonBg}`)
           }
         >
           <svg
@@ -70,7 +70,7 @@ export default ({ handleUpdate, content }) => {
           aria-label="Toggle Numbered List"
           className={
             buttonGroupMiddleClass +
-            (editor.isActive("orderedList") ? " bg-gray-600" : ` ${buttonBg}`)
+            (editor.isActive("orderedList") ? " bg-gray-400 dark:bg-gray-600" : ` ${buttonBg}`)
           }
         >
           <svg

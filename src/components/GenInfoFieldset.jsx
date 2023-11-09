@@ -19,7 +19,7 @@ function GenInfoFieldset() {
 
   return (
     <fieldset>
-      <legend className="text-xl mb-4 text-gray-200">
+      <legend className="text-xl mb-4 dark:text-gray-200">
         General Information
       </legend>
       <div className="grid md:grid-cols-2 md:gap-6">

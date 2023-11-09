@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { DataContext } from "../contexts/DataContext.jsx";
 import HtmlViewer from "./HtmlViewer.jsx";
+import PrimaryButton from "./PrimaryButton.jsx";
 
 function View({ setActiveTab }) {
   const {
@@ -40,7 +41,7 @@ function View({ setActiveTab }) {
 
   return (
     <>
-      <article className="text-gray-200 prose prose-invert max-w-none mb-8">
+      <article className="dark:text-gray-200 prose dark:prose-invert max-w-none mb-8">
         <header>
           <h1 className="mb-2">
             {firstName} {lastName}
@@ -69,10 +70,12 @@ function View({ setActiveTab }) {
                   <h3>{c.position}</h3>
                   <p>
                     <em>{c.name}</em>,{" "}
-                    {`${parseYearMonth(c.start)} - ${parseYearMonth(c.end) || 'present'}`}
+                    {`${parseYearMonth(c.start)} - ${
+                      parseYearMonth(c.end) || "present"
+                    }`}
                   </p>
 
-                  <div className="prose prose-invert">
+                  <div className="prose dark:prose-invert">
                     <HtmlViewer content={c.responsibilities} />
                   </div>
                 </li>
@@ -99,13 +102,11 @@ function View({ setActiveTab }) {
         </section>
         <hr className={education.length == 0 ? "hidden" : ""}></hr>
       </article>
-      <button
+      <PrimaryButton
         type="button"
-        onClick={() => setActiveTab("Form")}
-        className="text-neutral-100 bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-amber-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 w-full"
-      >
-        Edit
-      </button>
+        onClick={() => setActiveTab("form")}
+        text="Edit"
+      />
     </>
   );
 }
