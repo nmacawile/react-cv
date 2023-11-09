@@ -10,7 +10,6 @@ function Form({ setActiveTab }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(contextValue.data);
     setActiveTab("view");
   };
 
