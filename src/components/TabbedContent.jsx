@@ -14,7 +14,7 @@ function TabbedContent() {
     <>
       <div className="mb-4 border-b border-gray-300 dark:border-gray-700 backdrop-blur-sm z-10 sticky top-0">
         <ul
-          className="flex flex-wrap -mb-px text-sm dark:text-gray-400 font-medium text-center"
+          className="max-w-screen-xl flex flex-wrap m-auto -mb-px text-sm dark:text-gray-400 font-medium text-center"
           id="myTab"
           data-tabs-toggle="#myTabContent"
           role="tablist"
